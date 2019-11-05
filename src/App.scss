@@ -1,0 +1,16 @@
+.c-app {
+  &__body {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: -120px;
+    justify-content: center;
+    align-items: center;
+
+    @media only screen and (max-width: 900px) {
+      margin-top: -100px;
+      margin-bottom: 50px;
+      flex-direction: column;
+    }
+  }
+}
