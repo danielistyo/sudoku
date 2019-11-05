@@ -1,0 +1,56 @@
+@mixin transparentButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+.c-board-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  height: 40px;
+
+  @media only screen and (max-width: 600px) {
+    height: 35px;
+  }
+
+  &__newgame {
+    @include transparentButton();
+    background-color: #e37b40;
+    color: #fff;
+    border-radius: 2px;
+    padding: 0 20px;
+  }
+
+  &__message {
+    color: #fff;
+    font-weight: 700;
+  }
+}
+
+.c-time {
+  &__label {
+    font-size: 12px;
+    text-align: right;
+    color: #fff;
+  }
+
+  &__minute-wrapper {
+    display: flex;
+    font-size: 18px;
+    color: #fff;
+  }
+
+  &__pause-play {
+    @include transparentButton();
+    color: #e37b40;
+  }
+
+  &__minute {
+  }
+}

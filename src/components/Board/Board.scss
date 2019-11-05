@@ -1,0 +1,144 @@
+.c-board {
+  max-width: 458px;
+  flex-grow: 2;
+  padding: 10px;
+
+  .c-board-table {
+    border: 2px solid #e37b40;
+    border-radius: 10px;
+    border-spacing: 0;
+    overflow: hidden;
+    margin: auto;
+
+    &:focus {
+      border: 4px solid #e37b40;
+      outline: none;
+    }
+
+    &__cell {
+      @mixin cell {
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        font-weight: 500;
+        font-size: 25px;
+        color: #4ca3e0;
+        cursor: default;
+
+        @media only screen and (max-width: 600px) {
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+          font-weight: 500;
+          font-size: 25px;
+        }
+
+        @media only screen and (max-width: 400px) {
+          width: 35px;
+          height: 35px;
+          line-height: 35px;
+          font-size: 20px;
+        }
+        @media only screen and (max-width: 350px) {
+          width: 32px;
+          height: 32px;
+          line-height: 32px;
+        }
+
+        &:focus,
+        &:active,
+        &.active {
+          outline-color: #e37b40;
+          outline-width: thick;
+          outline-style: auto;
+        }
+
+        &.default {
+          color: #fff;
+        }
+      }
+      &--odd {
+        @include cell();
+        background-color: #324d5c;
+      }
+      &--even {
+        @include cell();
+        background-color: #3b5767;
+      }
+    }
+
+    &__column {
+      @mixin column {
+        padding: 0;
+      }
+      @include column();
+
+      &--border-left {
+        @include column();
+        border-left: 2px solid #e37b40;
+      }
+
+      &--border-top {
+        @include column();
+        border-top: 2px solid #e37b40;
+      }
+    }
+  }
+
+  .c-board-number {
+    border: 2px solid transparent;
+    border-spacing: 0;
+    overflow: hidden;
+    margin: auto;
+
+    &__number {
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      font-weight: 700;
+      font-size: 40px;
+      cursor: pointer;
+      color: #3b5767;
+
+      @media only screen and (max-width: 600px) {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 30px;
+      }
+
+      @media only screen and (max-width: 400px) {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 25px;
+      }
+
+      @media only screen and (max-width: 350px) {
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+      }
+    }
+  }
+
+  &__solveme-mobile {
+    display: none;
+    cursor: pointer;
+    background-color: #54b273;
+    border: 1px solid #54b273;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    @media only screen and (max-width: 900px) {
+      display: block;
+    }
+  }
+}

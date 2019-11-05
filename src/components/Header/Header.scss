@@ -1,0 +1,17 @@
+.c-header {
+  background-color: #324d5c;
+  padding: 40px;
+  height: 100px;
+  @media only screen and (max-width: 900px) {
+    padding-top: 10px;
+  }
+
+  &__logo {
+    width: 100px;
+    height: auto;
+    @media only screen and (max-width: 900px) {
+      margin: auto;
+      display: block;
+    }
+  }
+}
